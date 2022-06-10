@@ -10,11 +10,11 @@
 
 #define SIZE 10
 
-#include "lab1_function.h"
-#include "lab2_function.h"
-#include "lab3_function.h"
 #include <iostream>
 #include <iomanip>
+#include "lab1-function.h"
+#include "lab2-function.h"
+#include "lab3-function.h"
 #include "lab4-bankaccount.h"
 
 #include "bits/stdc++.h"
