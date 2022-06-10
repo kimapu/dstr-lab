@@ -8,7 +8,7 @@
 
 #include <iostream>
 
-#include "lab1_controller.h"
+#include "lab_controller.h"
 
 using namespace std;
 
@@ -16,6 +16,8 @@ void menu()
 {
 	cout << "1) Lab 1" << endl;
 	cout << "2) Lab 2" << endl;
+	cout << "3) Lab 3" << endl;
+	cout << "4) Lab 4" << endl;
 	cout << "-99) Exit" << endl;
 
 }
@@ -30,11 +32,23 @@ void handleAction(int opt)
 		}
 		case 2:
 		{
-			cout << "\n> See you next week!" << endl;
+			runLab2();
+			break;
+		}
+		case 3:
+		{
+			runLab3();
+			break;
+		}
+		case 4:
+		{
+			runLab4();
 			break;
 		}
 		case -99:
-			cout << "\nProgram is leaving... Byes!" << endl;
+			cout << "\n--------------------------------------------" << endl;
+			cout << "> thankyou..." << endl;
+			exit(0);
 			break;
 		default:
 			break;
