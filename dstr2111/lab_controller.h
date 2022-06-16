@@ -16,6 +16,9 @@
 #include "lab2-function.h"
 #include "lab3-function.h"
 #include "lab4-bankaccount.h"
+#include "lab4-cashregister.h"
+#include "lab4-employee.h"
+#include "lab4-population.h"
 
 #include "bits/stdc++.h"
 
@@ -42,7 +45,9 @@ void runLab4()
 	switch (opt) {
 		case 1:
 		{
-			//exe-1
+			/**
+			 * PartA-Exe1
+			 */
 			cout << "--- Bank Account ---" << endl;
 			int dollar, cent;
 
@@ -66,7 +71,96 @@ void runLab4()
 		}
 		case 2:
 		{
-			//demo-2
+			/**
+			 * PartA-Exe2
+			 */
+			cout << "--- Cash Register Machine ---" << endl;
+
+			CashRegister * cashRegister = new CashRegister();
+			cashRegister->printBalance();
+
+			cout << endl;
+			cout << "Deposit[yes/no]? " << endl;
+			string deposit;
+			cin >> deposit;
+			bool isDeposit = (deposit == "yes") ? true : false;
+			if(isDeposit != false)
+			{
+				double amt;
+				cout << "Enter amount: ";
+				cin >> amt;
+				cashRegister->acceptAmount(amt);
+				cout << "Deposited " << amt << endl;
+				cashRegister->printBalance();
+			}else{
+				cashRegister->printBalance();
+			}
+			delete cashRegister;
+			break;
+		}
+		case 3:
+		{
+			/**
+			 * PartA-Exe3
+			 */
+			Employee * emp1 = new Employee(47899, "susan", "accounting", "vice president");
+
+			Employee * emp2 = new Employee(34522, "matthew");
+			emp2->setDepartment("IT");
+			emp2->setPosition("programmer");
+
+			Employee * emp3 = new Employee();
+			emp3->setId(65881);
+			emp3->setName("james");
+			emp3->setDepartment("manufacturing");
+			emp3->setPosition("engineer");
+
+			//show
+			cout << "Employee 1 = " << emp1->toString() << endl;
+			cout << "Employee 2 = " << emp2->toString() << endl;
+			cout << "Employee 3 = " << emp3->toString() << endl;
+
+			break;
+		}
+		case 4:
+		{
+			/**
+			 * PartA-Exe4
+			 */
+			cout << "--- Population ---" << endl;
+			int n;
+			cout << "Enter population: ";
+			cin >> n;
+
+			if( n > 1 )
+			{
+				Population * p = new Population(n);
+				cout << p->toString() << endl;
+
+				try {
+
+					int birthNo;
+					cout << "Enter birth number: ";
+					cin >> birthNo;
+					cout << "Birth rate = " << p->birthRate(birthNo) << endl;
+
+					int deathNo;
+					cout << "Enter death number: ";
+					cin >> deathNo;
+					cout << "Death rate = " << p->deathRate(deathNo) << endl;
+
+
+				} catch (invalid_argument &e) {
+					cout << "Exception: " << e.what() << endl;
+				}
+
+				delete p;
+			}
+			else
+			{
+				cout << "ERROR: Invalid population number!" << endl;
+			}
+
 
 			break;
 		}
