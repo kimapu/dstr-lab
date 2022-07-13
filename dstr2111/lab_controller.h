@@ -19,11 +19,147 @@
 #include "lab4-cashregister.h"
 #include "lab4-employee.h"
 #include "lab4-population.h"
+#include "lab5-struct-student.h"
+#include "lab5-struct-student-linkedlist.h"
 
 #include "bits/stdc++.h"
 
 using namespace std;
 
+
+void runLab5()
+{
+
+	cout << endl;
+	cout << "--- Welcome to Lab 3 ---" << endl;
+
+	int opt;
+	cout << "1) Part A: Exe1" << endl;
+	cout << "2) Part A: Exe2" << endl;
+	cout << "3) Part A: Exe3" << endl;
+	cout << "4) Part A: Exe4" << endl;
+	cout << "5) Part A: Exe5" << endl;
+
+	cout << "> Choose: " << endl;
+	cin >> opt;
+
+	switch (opt) {
+		case 1:
+		{
+			/**
+			 * PartA-Exe1
+			 */
+			Student student;
+			cout << "--- ENTER STUDENT ID ---" << endl;
+			cout << "Id? " << endl;
+			cin >> student.id;
+			student.next = 0;
+
+			cout << endl;
+
+			cout << "You've been entered ";
+			cout << "student id = " << student.id;
+			cout << ", next student = " << student.next << endl;
+
+			cout << "============================================================" << endl;
+			break;
+
+		}
+		case 2:
+		{
+			/**
+			 * PartA-Exe2
+			 */
+			StudentLinkedList lst;
+			int n = 0;
+			//prompt the user for student #
+			cout << "How many students? " << endl;
+			cin >> n;
+
+			for(int i = 0; i < n; ++i)
+			{
+				int id = 0;
+				cout << "\n--- ENTER STUDENT ID #"<< (i+1) <<"---" << endl;
+				cout << "Id? " << endl;
+				cin >> id;
+				//insert id to linkedlist
+				lst.insert(id, "", 0);
+			}
+			//show
+			lst.show();
+
+			cout << endl;
+			cout << "============================================================" << endl;
+			break;
+		}
+		case 3:
+		{
+			/**
+			 * PartA-Exe3
+			 */
+			StudentLinkedList lst;
+			int n = 0;
+			//prompt the user for student #
+			cout << "How many students? " << endl;
+			cin >> n;
+
+			for(int i = 0; i < n; ++i)
+			{
+				int id = 0;
+				cout << "\n--- ENTER STUDENT ID #"<< (i+1) <<"---" << endl;
+				cout << "Id? " << endl;
+				cin >> id;
+				lst.insertAndSorted(id);
+			}
+			//show
+			lst.show();
+
+			cout << endl;
+			cout << "============================================================" << endl;
+
+			break;
+		}
+		case 4:
+		{
+			/**
+			 * PartA-Exe4
+			 */
+			StudentLinkedList lst;
+			int n = 0;
+			//prompt the user for student #
+			cout << "How many students? " << endl;
+			cin >> n;
+
+			for(int i = 0; i < n; ++i)
+			{
+				int id = 0;
+				string name = "";
+				int age = 0;
+
+				cout << "\n--- ENTER STUDENT ID #"<< (i+1) <<"---" << endl;
+				cout << "Id? " << endl;
+				cin >> id;
+
+				cout << "Name? " << endl;
+				cin >> name;
+
+				cout << "Age? " << endl;
+				cin >> age;
+
+				lst.insert(id, name, age);
+			}
+			//show
+			lst.show();
+
+			cout << endl;
+			cout << "============================================================" << endl;
+
+			break;
+		}
+		default:
+			break;
+	}
+}
 
 void runLab4()
 {
