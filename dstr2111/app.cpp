@@ -18,6 +18,7 @@ void menu()
 	cout << "2) Lab 2" << endl;
 	cout << "3) Lab 3" << endl;
 	cout << "4) Lab 4" << endl;
+	cout << "5) Lab 5" << endl;
 	cout << "-99) Exit" << endl;
 
 }
@@ -43,6 +44,11 @@ void handleAction(int opt)
 		case 4:
 		{
 			runLab4();
+			break;
+		}
+		case 5:
+		{
+			runLab5();
 			break;
 		}
 		case -99:
