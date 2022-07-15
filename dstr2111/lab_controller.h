@@ -21,17 +21,19 @@
 #include "lab4-population.h"
 #include "lab5-struct-student.h"
 #include "lab5-struct-student-linkedlist.h"
+#include "lab6-class-student-linkedlist.h"
 
 #include "bits/stdc++.h"
 
 using namespace std;
 
 
+
 void runLab5()
 {
 
 	cout << endl;
-	cout << "--- Welcome to Lab 3 ---" << endl;
+	cout << "--- Welcome to Lab 5 ---" << endl;
 
 	int opt;
 	cout << "1) Part A: Exe1" << endl;
