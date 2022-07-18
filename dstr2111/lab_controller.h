@@ -27,6 +27,116 @@
 
 using namespace std;
 
+void runLab6()
+{
+	cout << endl;
+	cout << "--- Welcome to Lab 6 ---" << endl;
+
+	int opt;
+	cout << "1) Part A" << endl;
+
+	cout << "> Choose: " << endl;
+	cin >> opt;
+
+	switch (opt) {
+		case 1:
+		{
+			/**
+			 * PartA-Exe1+Exe2
+			 */
+			StudentCollection lst;
+			int n = 0;
+			//prompt the user for student #
+			cout << "How many students? " << endl;
+			cin >> n;
+
+			for(int i = 0; i < n; ++i)
+			{
+				int id = 0;
+				cout << "\n--- ENTER STUDENT ID #"<< (i+1) <<"---" << endl;
+				cout << "Id? " << endl;
+				cin >> id;
+
+				lst.insert(id, "", 0);
+			}
+			//show
+			lst.show();
+			cout << endl;
+			char next = 'n';
+			do{
+				//show
+				lst.show();
+				cout << endl;
+				int opt = -1;
+				cout << "\n--- MENU ---" << endl;
+				cout << "1) Delete First Student" << endl;
+				cout << "2) Delete Last Student" << endl;
+				cout << "3) Delete Student by Index" << endl;
+				cout << "4) Delete Student by ID" << endl;
+
+				cout << "\nChoice? " << endl;
+				cin >> opt;
+				cout << endl;
+				switch( opt )
+				{
+					case 1:
+					{
+						cout << "--- DELETE FIRST STUDENT OPTION ---" << endl;
+						lst.deleteFirst();
+						cout << "LOG:  First student is deleted..." << endl;
+					}
+					break;
+					case 2:
+					{
+						cout << "--- DELETE LAST STUDENT OPTION ---" << endl;
+						lst.deleteLast();
+						cout << "LOG:  Last student is deleted..." << endl;
+					}
+					break;
+					case 3:
+					{
+						cout << "--- DELETE STUDENT BY INDEX OPTION ---" << endl;
+						int i = -1;
+						cout << "Enter index? " << endl;
+						cin >> i;
+						lst.deleteItemAt(i);
+						cout << "LOG:  Student #" << i << " is deleted..." << endl;
+					}
+					break;
+					case 4:
+					{
+						cout << "--- DELETE STUDENT BY ID OPTION ---" << endl;
+						int uid = -1;
+						cout << "Enter student id? " << endl;
+						cin >> uid;
+						lst.remove(uid);
+						cout << "LOG:  Student ID#" << uid << " is deleted..." << endl;
+					}
+					break;
+					default:
+						cout << "LOG: Invalid option!" << endl;
+						break;
+				}
+				//show
+				lst.show();
+				cout << endl;
+
+				cout << "\nDo you want to continue [y/n]? " << endl;
+				cin >> next;
+
+			}while( next != 'n' );
+
+
+			cout << endl;
+			cout << "============================================================" << endl;
+			break;
+
+		}
+
+		default:
+			break;
+	}
+}
 
 
 void runLab5()
